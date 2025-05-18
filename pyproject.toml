@@ -1,6 +1,6 @@
 [build-system]
 requires = [
-    "setuptools >= 61",
+    "setuptools >= 64",
     "wheel",
 ]
 build-backend = "setuptools.build_meta"
@@ -21,21 +21,12 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = [
-    "panda3d >= 1.10.8",
+    "panda3d >= 1.10.8"
 ]
 requires-python = ">= 3.8"
 
 [project.urls]
-homepage = "https://github.com/Moguri/panda3d-gltf"
-
-[project.optional-dependencies]
-test = ["pytest", "pylint~=2.5.0", "pytest-pylint"]
-
-[project.scripts]
-gltf2bam = "gltf.cli:main"
-
-[project.gui-scripts]
-gltf-viewer = "gltf.viewer:main"
+homepage = "https://github.com/rayanalysis/panda3d-gltf"
 
 [project.entry-points."panda3d.loaders"]
 gltf = "gltf._loader:GltfLoader"
@@ -46,6 +37,3 @@ packages = ["gltf"]
 
 [tool.setuptools.dynamic]
 version = {attr = "gltf.version.__version__"}
-
-[tool.pytest.ini_options]
-addopts = "--pylint"
